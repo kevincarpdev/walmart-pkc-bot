@@ -18,7 +18,7 @@ async def monitor_product(playwright, url, proxy=None):
         # Initial load to get cookies/session ready
         await page.goto(url, wait_until="networkidle")
         
-        drop_time = os.getenv("DROP_TIME", "05:59:00")
+        drop_time = os.getenv("DROP_TIME", "18:00:00")
         target_dt = get_target_time(drop_time)
         
         print(f"[*] Waiting for drop at {drop_time}...")
