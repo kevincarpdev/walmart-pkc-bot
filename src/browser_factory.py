@@ -1,6 +1,6 @@
 import asyncio
 from playwright.async_api import async_playwright
-from playwright_stealth import stealth_async
+from playwright_stealth import stealth_page
 
 async def get_stealth_browser(playwright, proxy=None):
     """
@@ -30,8 +30,8 @@ async def get_stealth_browser(playwright, proxy=None):
         viewport={"width": 1920, "height": 1080}
     )
     
-    # Appply stealth to all new pages in this context
+    # Apply stealth to all new pages in this context
     page = await context.new_page()
-    await stealth_async(page)
+    await stealth_page(page)
     
     return browser, context, page
